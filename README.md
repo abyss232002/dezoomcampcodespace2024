@@ -4,7 +4,7 @@ _This repo is to learn about github developement-environment-as-service --> **_c
 ## What is [github codespace](https://github.com/features/codespaces)
 
 * Github codespace is a fully configured dev environment in cloud that starts in second with upto 60 hrs in month free.
-* All you need to free github account to start using codespace.
+* You just need a free github account to start using codespace.
 * With free account we have access to 2-core(4gb ram,60 hr fee /month) and 4-core(8gb ram, 30 hrs free /month) option.
 Please follow github documentation on [codespace][def11] for further informations.
 
@@ -88,14 +88,14 @@ $ docker volume ls
 * Run a docker postgres  container in newly created environment
 ```sh
 $ docker run -it \
->   -e POSTGRES_USER="root" \
->   -e POSTGRES_PASSWORD="root" \
->   -e POSTGRES_DB="ny_taxi" \
->   -v dtc_postgress_volume_local:/var/lib/postgresql/data \
->   -p 5432:5432 \
->   --network=pg-network \
->   --name pg-database \
-> postgres:13
+    -e POSTGRES_USER="root" \
+    -e POSTGRES_PASSWORD="root" \
+    -e POSTGRES_DB="ny_taxi" \
+    -v dtc_postgress_volume_local:/var/lib/postgresql/data \
+    -p 5432:5432 \
+    --network=pg-network \
+    --name pg-database \
+  postgres:13
 ```
 ## pgcli setup to communicate with postgres db ny_taxi
 
@@ -133,6 +133,24 @@ docker run -it \
     --name pgadmin \
 dpage/pgadmin4
 ```
+* Open localhost:8080 in browser to access pgadmin.Login with user name/pass provided while running pgadmin container above
+  
+  ![Alt text][def12]
+
+* Connect to pg-database with required id/pass
+
+* Add new server
+
+  ![Alt text][def13]  
+
+* Provide the details in General and COnnection tab
+  
+  ![Alt text][def14]
+
+  ![Alt text][def15]
+
+  ![Alt text][def16]
+
 * Stop both postgres  and pgadmin container by press ctrl+c(windows)
 
 [def]: ./Images/image.png
@@ -146,4 +164,9 @@ dpage/pgadmin4
 [def9]: ./Images/image9.png
 [def10]: ./Images/image10.png
 [def11]: https://docs.github.com/en/codespaces/overview
+[def12]: ./Images/image11.png
+[def13]: ./Images/image12.png
+[def14]: ./Images/image13.png
+[def15]: ./Images/image14.png
+[def16]: ./Images/image15.png
 
